@@ -41,7 +41,8 @@ body{
     color: #000;
 }
 
-$btnColorFixed : #000;
+$mainColor : #f49a3f;
+$btnColorFixed : $mainColor;
 
 @mixin btn {
 
