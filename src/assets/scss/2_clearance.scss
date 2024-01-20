@@ -1,0 +1,25 @@
+.clearance {
+    padding-top: 50px;
+}
+.clearance__box {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.clearance__left {
+}
+.clearance__imgWrp {
+    max-width: 100%;
+    max-height: 100%;
+}
+.clearance__img {
+    width: 100%;
+    height: 100%;
+}
+.clearance__title {
+    @include h2Title;
+}
+.clearance__txt {
+    padding: 10px;
+    line-height: 20px;
+}
