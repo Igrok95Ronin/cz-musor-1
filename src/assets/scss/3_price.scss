@@ -1,0 +1,38 @@
+.price {
+    padding: 50px 0 0;
+}
+.price__box {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.price__left {
+}
+.price__imgWrp {
+    max-width: 100%;
+    max-height: 100%;
+}
+.price__img {
+    width: 100%;
+    height: 100%;
+}
+.price__title {
+    @include h2Title;
+    text-align: center;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        background-image: url("../img/check2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50px;
+        height: 50px;
+        bottom: -30px;
+        right: 0;
+    }
+}
+.price__txt {
+    line-height: 20px;
+    padding: 10px;
+}
