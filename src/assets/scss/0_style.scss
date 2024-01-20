@@ -45,7 +45,25 @@ $mainColor : #f49a3f;
 $btnColorFixed : $mainColor;
 
 @mixin btn {
-
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+    span{
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url("../icons/telephone-fill.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: -30px;
+            width: 23px;
+            height: 23px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
 }
 
 @mixin h2Title {

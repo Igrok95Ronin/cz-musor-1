@@ -5,9 +5,10 @@
 }
 .liquidation__title {
     @include h2Title;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .liquidation__txt {
+    padding: 10px;
     line-height: 20px;
     margin-bottom: 20px;
 }
