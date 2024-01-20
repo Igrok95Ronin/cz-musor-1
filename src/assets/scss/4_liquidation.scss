@@ -1,0 +1,13 @@
+.liquidation {
+    padding: 50px 0 0;
+}
+.liquidation__box {
+}
+.liquidation__title {
+    @include h2Title;
+    margin-bottom: 20px;
+}
+.liquidation__txt {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
