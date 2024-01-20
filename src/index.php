@@ -1,11 +1,11 @@
 <?php
-$site_data      = json_decode(file_get_contents('http://templates.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
+$site_data      = json_decode(file_get_contents('http://local.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
 
 $phone_name     = $site_data['phone_name'];
 $phone_href     = $site_data['phone_href'];
 
-$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Entrumpelung'));
-$city           = str_replace('+', ' ', trim($_GET['n'] ?? 'in der nahe'));
+$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Vyklízení bytů'));
+$city           = str_replace('+', ' ', trim($_GET['n'] ?? ''));
 
 $title = $text . ' ' . $city;
 ?>
@@ -37,7 +37,7 @@ $title = $text . ' ' . $city;
                             <div class="header__imgWrp">
                                 <img class="header__img" src="./assets/img/mainFon.jpg" alt="skládka">
                             </div>
-                            <h1 class="header__title">Vyklízení bytů</h1>
+                            <h1 class="header__title"><?= $title ?></h1>
                         </div>
                         <div class="header__right">
                             <div class="header__subTitleWrp">
@@ -115,6 +115,49 @@ $title = $text . ' ' . $city;
                 </div>
             </div>
         </section>
+        <section class='forms'>
+            <div class='forms__wrapper'>
+                <div class='container-fluid'>
+                    <div class='row'>
+                        <div class='col-12 containerP0'>
+                        <div class='forms__box'>
+                            <h2 class='forms__title'>Kontaktuj nás</h2>
+                            <form id='jq_form' class='mb-0 mt-3'>
+                                <div class='my-0'>
+                                    <input class='form-control' placeholder='Jméno' name='jq_name' type='text'>
+                                    <div id='jq_name' style='font-weight:700;font-size:15px;color:red;padding-top:2px;display:none'>Toto je požadované pole.</div>
+                                </div>
+                                <div class='my-4'>
+                                    <input class='form-control' placeholder='Telefon' name='jq_phone' type='text'>
+                                    <div id='jq_phone' style='font-weight:700;font-size:15px;color:red;padding-top:2px;display:none'>Toto je požadované pole.</div>
+                                </div>
+                                <div class='my-4'>
+                                    <input class='form-control' placeholder='Ulice' name='jq_street' type='text'>
+                                    <div id='jq_street' style='font-weight:700;font-size:15px;color:red;padding-top:2px;display:none'>Toto je požadované pole.</div>
+                                </div>
+                                <div class='my-4'>
+                                    <input class='form-control' placeholder='PSČ / Město' name='jq_city' type='text'>
+                                    <div id='jq_city' style='font-weight:700;font-size:15px;color:red;padding-top:2px;display:none'>Toto je požadované pole.</div>
+                                </div>
+                                <div class='my-4'>
+                                    <input class='form-control' placeholder='E-mail' name='jq_email' type='text'>
+                                    <div id='jq_email' style='font-weight:700;font-size:15px;color:red;padding-top:2px;display:none'>Toto je požadované pole.</div>
+                                </div>
+                                <div class='my-4'>
+                                    <textarea rows='3' class='form-control' name='jq_text' placeholder='Zprávy'></textarea>
+                                    <div id='jq_text' style='font-weight:700;font-size:15px;color:red;padding-top:2px;display:none'>Toto je požadované pole.</div>
+                                </div>
+                                <div>
+                                    <input class='btn  text-uppercase fw-bold mb-0 px-3 py-2 forms__button' type='submit' id='jq_submit' value='Poslat'>
+                                </div>
+                                <div id='jq_success' style='display:none'>Díky za vaši zprávu. Byla odeslána.</div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </section>
 
         
         <section class='btnFixedD'>
@@ -124,7 +167,7 @@ $title = $text . ' ' . $city;
         </section>
         <section class='btnFixed'>
             <div class='btnFixed__box'>
-                <a class="btnFixed__btn" href="<?= $phone_href ?>" ><span>111222333</span></a>
+                <a class="btnFixed__btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
             </div>
         </section>
     </main>
